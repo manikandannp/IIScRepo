@@ -1,0 +1,61 @@
+# Package Overview
+package_name: bike_rental_model
+
+# Data Files
+training_data_file: bike-sharing-dataset.csv
+test_data_file: test.csv
+
+# Variables
+# The variable we are attempting to predict (Survival)
+target: cnt
+
+pipeline_name: bike_rental
+pipeline_save_file: bike_rental__model_output_v
+
+features:      # final features to be use
+  - dteday
+  - season
+  - hr 
+  - holiday 
+  - weekday
+  - workingday  # generated  by  Sibsp + Parch +1 <--Before pipeline alongwith loading the data
+  - weathersit   # generated cabin              <--Before pipeline alongwith loading the data
+  - temp 
+  - atemp
+  - hum
+  - windspeed
+  - casual
+  - registered
+  - yr
+  - mnth      # generated from name          <--Before pipeline alongwith loading the data
+
+unused_fields:  # Features to drop before pipeline
+  - PassengerId
+  - Name
+  - SibSp
+  - Parch
+  - Ticket
+  - Cabin
+
+# Features inside processing pipeline
+
+
+
+
+
+# set train/test split
+test_size: 0.20
+
+# to set the random seed
+random_state: 42
+# alogrithm parameters
+n_estimators: 150
+max_depth: 5
+
+
+
+
+
+
+
+
